@@ -1,6 +1,6 @@
 /* General Variables */
 :root {
-  --primary-bg: #1A202C;  /* Dark grayish blue */
+  --primary-bg: #6b6b7d;  /* Dark grayish blue */
   --secondary-bg: #2D3748;  /* Darker grayish blue */
   --text-color: #F7FAFC;  /* Off-white */
   --accent-color: #4299E1;  /* Bright blue */
@@ -9,13 +9,61 @@
 /* Font Import */
 @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&subset=arabic');
 
+.main-background {
+  background: white url('1.jpg') no-repeat center center;
+  background-size: cover;
+}
+
+.video-background {
+  background-color: white;
+}
+/* Additional styles for the new header */
+.App-header {
+  background-image: url('header-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  padding: 2rem;
+  text-align: center;
+  color: var(--text-color);
+}
+
+.App-logo {
+  width: 80px;
+  height: auto;
+  margin-bottom: 1rem;
+}
+
+/* Additional Hover Effects */
+.App-nav a:hover,
+.playlist-button:hover {
+  background-color: var(--text-color);
+  color: var(--primary-bg);
+}
+
+/* Responsive Grid for Videos */
+.video-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 16px;
+}
+
 /* General Reset */
 body, h1, h2, h3, p, a {
   margin: 0;
   padding: 0;
   font-size: 100%;
   line-height: 1.6;
-  font-family: 'Cairo', sans-serif;
+  font-family: 'Cairo', Helvetica, Arial, sans-serif;
+}
+.section-title {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.section-description {
+  font-size: 18px;
+  margin-top: 10px;
+  margin-bottom: 20px;
 }
 
 /* App Container */
@@ -109,4 +157,11 @@ body, h1, h2, h3, p, a {
 .playlist-button:hover {
   background-color: var(--text-color);
   color: var(--accent-color);
+}
+/* Add these lines to set the background image for the entire website */
+body {
+  background-image: url('header-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
 }

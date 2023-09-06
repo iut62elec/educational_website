@@ -15,7 +15,7 @@ const videoData = {
 };
 
 const HomePage = () => (
-  <div>
+  <div >
     {/* New description */}
     <h2 className="section-title">آکادمی آموزش معلمان و والدین دکتر پوران خروشی</h2>
     <p className="section-description">آنچه که شما معلمان و والدین باید برای تربیت شاگردان و فرزندانتون بدونین، اینجا یاد می گیرین</p>
@@ -30,12 +30,12 @@ const HomePage = () => (
 
 const AboutPage = () => (
   <div>
-    <p>آنچه که شما معلمان و والدین باید برای تربیت شاگردان و فرزندانتون بدونین، اینجا یاد می گیرین</p>
+    {/* <p>آنچه که شما معلمان و والدین باید برای تربیت شاگردان و فرزندانتون بدونین، اینجا یاد می گیرین</p> */}
     {/* Embed the "معرفی" video */}
     <iframe
       title="معرفی"
-      width="560"
-      height="315"
+      width="260"
+      height="190"
       src={`https://www.youtube.com/embed/Giu1-k-Qkck`}
       frameBorder="0"
       allowFullScreen
@@ -114,10 +114,7 @@ const EducationalVideosPage = () => (
 const App = () => (
   <Router>
     <div className="App">
-      <header className="App-header">
-      <h1>آکادمی آموزش معلمان و والدین</h1>
-          <h2>دکتر پوران خروشی</h2>
-        </header>
+     
         <nav className="App-nav">
        
        
