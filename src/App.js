@@ -6,23 +6,24 @@ import { faPhone, faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import './App.css';
 
 const videoData = {
-  'معرفی': ['Giu1-k-Qkck'],
-  'نقشهای معلم حرفه ای': ['azNg43gqZ8c'],
-  'آموزش والدین برای تربیت کودک و نوجوان': ['Ehtt2IWYAk4'],
+  'معرفی': ['Giu1-k-Qkck','EOA0Z2gvkh4'],
+  'نقشهای معلم حرفه ای': ['azNg43gqZ8c','61_jX4Wast4','sjmbrJZbcyw'],
+  'آموزش والدین برای تربیت کودک و نوجوان': ['Ehtt2IWYAk4','CJvHPRe-VzQ','PSpUWxlfh1Q'],
+  'لایو‌های آموزشی اینستاگرم': ['cwSkD6jzrB4','PPzVWPc80JQ','LOFOUc9c3LQ'],
+
 };
 
 const HomePage = () => (
   <div>
-    <p>Home Page Content</p>
-    {/* Embed the "معرفی" video */}
-    <iframe
-      title="معرفی"
-      width="560"
-      height="315"
-      src={`https://www.youtube.com/embed/Giu1-k-Qkck`}
-      frameBorder="0"
-      allowFullScreen
-    ></iframe>
+    {/* New description */}
+    <h2 className="description">آکادمی آموزش معلمان و والدین دکتر پوران خروشی</h2>
+    <p>آنچه که شما معلمان و والدین باید برای تربیت شاگردان و فرزندانتون بدونین، اینجا یاد می گیرین</p>
+
+    {/* Videos */}
+    <EducationalVideosPage />
+
+    {/* Contact */}
+    <ContactPage />
   </div>
 );
 
@@ -63,6 +64,8 @@ const EducationalVideosPage = () => (
         ? 'https://www.youtube.com/playlist?list=PLBqeRzwcp__gnPbf_T_0eje1JMBJ2dlid'
         : category === 'نقشهای معلم حرفه ای'
         ? 'https://www.youtube.com/playlist?list=PLBqeRzwcp__g9cPzFe9Anf2EBQKMiMMW-'
+        : category === 'لایو‌های آموزشی اینستاگرم'
+        ? 'https://www.youtube.com/playlist?list=PLBqeRzwcp__iFfzPS8bb7rgVM6j02RAYx'
         : null;
 
         return (
@@ -85,7 +88,7 @@ const EducationalVideosPage = () => (
           {playlistLink && (
             <p className="card-footer">
               <a href={playlistLink} className="playlist-button" target="_blank" rel="noopener noreferrer">
-              لیست کامل ویدئو‌ها در این قسمت
+                لیست کامل ویدئو‌ها در این قسمت
               </a>
             </p>
           )}
@@ -106,9 +109,11 @@ const App = () => {
 
         <nav className="App-nav">
         <Link to="/">خانه </Link>
-          <Link to="/about">درباره ما</Link>
-          <Link to="/educational-videos">ویدئو‌های آموزشی </Link>
+        <Link to="/educational-videos">ویدئو‌های آموزشی </Link>
+         
+          
           <Link to="/contact">تماس با ما</Link>
+          <Link to="/about">درباره ما</Link>
         </nav>
 
         <main className="App-main">

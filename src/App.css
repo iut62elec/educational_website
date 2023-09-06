@@ -179,3 +179,22 @@ a {
 .playlist-button:hover {
   background-color: #edf0e6;
 }
+
+.App-header {
+  /* existing styles */
+}
+
+.App-nav {
+  font-size: 1.5rem; /* New font size */
+  background-color: #4CAF50; /* New background color */
+  color: white;
+}
+
+.description {
+  font-size: 1.2rem; /* Adjust as needed */
+}
+
+.video-section.card, .video-container.card {
+  border-radius: 15px;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
