@@ -1,5 +1,8 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Link, Routes } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faInstagram, faTelegram } from '@fortawesome/free-brands-svg-icons';
+import { faPhone, faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import './App.css';
 
 const videoData = {
@@ -38,11 +41,25 @@ const AboutPage = () => (
   </div>
 );
 
-const ContactPage = () => <div>Contact information will be here.</div>;
+const ContactPage = () => (
+  <div>
+    <p>Contact information will be here.</p>
+    <p><FontAwesomeIcon icon={faPhone} /> 913-318-1966</p>
+    <p><FontAwesomeIcon icon={faEnvelope} /> poorankhorooshi@gmail.com</p>
+    <a href="https://www.instagram.com/dr.pooran.khorooshi/" target="_blank" rel="noopener noreferrer">
+      <FontAwesomeIcon icon={faInstagram} /> Instagram
+    </a>
+    <a href="https://t.me/s/pkh2023" target="_blank" rel="noopener noreferrer">
+      <FontAwesomeIcon icon={faTelegram} /> Telegram
+    </a>
+  </div>
+);
+
 
 const EducationalVideosPage = () => (
   <div>
-    {['معرفی', 'نقشهای معلم حرفه ای'].map((category) => (
+    {Object.keys(videoData).map((category) => (
+
       <div key={category} className="video-section">
         <h2>{category}</h2>
         <div className="video-list">
@@ -74,10 +91,10 @@ const App = () => {
         </header>
 
         <nav className="App-nav">
-          <Link to="/">خانه</Link>
-          <Link to="/about">درباره</Link>
-          <Link to="/educational-videos">آموزشی ویدئوها</Link>
-          <Link to="/contact">تماس</Link>
+        <Link to="/">خانه </Link>
+          <Link to="/about">درباره ما</Link>
+          <Link to="/educational-videos">ویدئو‌های آموزشی </Link>
+          <Link to="/contact">تماس با ما</Link>
         </nav>
 
         <main className="App-main">
