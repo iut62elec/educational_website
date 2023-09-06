@@ -1,200 +1,112 @@
-@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;700&subset=arabic');
-/* Reset some default browser styles */
+/* General Variables */
+:root {
+  --primary-bg: #1A202C;  /* Dark grayish blue */
+  --secondary-bg: #2D3748;  /* Darker grayish blue */
+  --text-color: #F7FAFC;  /* Off-white */
+  --accent-color: #4299E1;  /* Bright blue */
+}
+
+/* Font Import */
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&subset=arabic');
+
+/* General Reset */
 body, h1, h2, h3, p, a {
   margin: 0;
   padding: 0;
-  border: 0;
   font-size: 100%;
-  vertical-align: baseline;
-}
-/* Apply the imported font to body and other text elements */
-body {
-  font-family: 'Cairo', sans-serif;
   line-height: 1.6;
+  font-family: 'Cairo', sans-serif;
 }
+
+/* App Container */
 .App {
   text-align: center;
-  font-family: 'Arial', sans-serif; /* You can replace this with a Farsi-compatible font */
+  background-color: var(--primary-bg);
+  color: var(--text-color);
 }
 
+/* Header */
 .App-header {
-  background-color: #282c34;
-  padding: 1em;
-  color: white;
+  background-color: var(--primary-bg);
+  padding: 1.5rem;
+  font-size: 1.5rem;
 }
 
+/* Navigation */
 .App-nav {
-  margin-top: 1em;
-  margin-bottom: 1em;
+  background-color: var(--secondary-bg);
+  color: var(--text-color);
+  display: flex;
+  justify-content: space-around;
+  padding: 1rem 0;
+  font-size: 1.2rem;
 }
 
 .App-nav a {
-  margin: 0 15px;
+  color: var(--text-color);
   text-decoration: none;
-  color: #333;
+  padding: 0.5rem;
 }
 
+/* Main Content */
 .App-main {
-  padding: 1em;
-  background-color: #f4f4f4;
+  padding: 2rem;
 }
 
+/* Video Section */
 .video-section {
-  margin-bottom: 2em;
+  margin: 2rem 0;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .video-list {
   display: flex;
   flex-wrap: wrap;
-}
-
-.video-container {
-  margin: 0.5em;
-}
-
-iframe {
-  max-width: 100%;
-}
-
-.App-footer {
-  background-color: #282c34;
-  color: white;
-  padding: 1em;
-  position: relative;
-  bottom: 0;
-  width: 100%;
-}
-
-.App-footer a {
-  color: white;
-  margin: 0 15px;
-}
-a {
-  margin: 0 15px;
-  text-decoration: none;
-}
-
-.App-footer a,
-.ContactPage a {
-  color: white;
-}
-
-.ContactPage p,
-.ContactPage a {
-  margin-bottom: 10px;
-}
-
-/* Add some spacing between the icon and text */
-.ContactPage a svg,
-.ContactPage p svg {
-  margin-right: 8px;
-}
-
-
-.App {
-  text-align: center;
-}
-
-.App-header {
-  background-color: #282c34;
-  padding: 1rem;
-  color: white;
-}
-
-.App-nav a {
-  margin: 0 15px;
-  text-decoration: none;
-  color: #282c34;
-  font-weight: 600;
-}
-
-.App-nav a:hover {
-  color: #007bff;
 }
 
 .video-container {
   margin: 1rem;
+  border-radius: 8px;
+  overflow: hidden;
 }
 
-.video-list {
+/* Contact Page */
+.contact-section {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
-.video-section {
-  margin-top: 2rem;
+.contact-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
 }
 
-/* Make FontAwesome icons larger */
+.contact-item span,
+.contact-item a {
+  margin-left: 0.5rem;
+  font-size: 1rem;
+}
+
 .fa-phone, .fa-envelope, .fa-instagram, .fa-telegram {
   font-size: 24px;
-  margin-right: 8px;
+  margin-right: 0.5rem;
+  color: var(--accent-color);
 }
 
-/* Add to your existing App.css */
-.video-section a {
-  color: #007bff;
-  text-decoration: none;
-  font-weight: 600;
-  margin-top: 1rem;
-  display: inline-block;
-}
-
-.video-section a:hover {
-  text-decoration: underline;
-}
-/* Additional styles */
-.card {
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  margin-bottom: 2rem;
-}
-
-.card-header {
-  background-color: #f4f4f4;
-  border-bottom: 1px solid #ccc;
-  padding: 1rem;
-  font-weight: 600;
-}
-
-.card-body {
-  padding: 1rem;
-}
-
-.card-footer {
-  background-color: #f4f4f4;
-  border-top: 1px solid #ccc;
-  padding: 1rem;
-}
-
+/* Buttons and Links */
 .playlist-button {
-  background-color: #2b2f57;
-  color: rgb(191, 36, 36);
+  background-color: var(--accent-color);
+  color: var(--text-color);
   padding: 10px 20px;
   border-radius: 4px;
   text-decoration: none;
+  font-weight: bold;
 }
 
 .playlist-button:hover {
-  background-color: #edf0e6;
-}
-
-.App-header {
-  /* existing styles */
-}
-
-.App-nav {
-  font-size: 1.5rem; /* New font size */
-  background-color: #4CAF50; /* New background color */
-  color: white;
-}
-
-.description {
-  font-size: 1.2rem; /* Adjust as needed */
-}
-
-.video-section.card, .video-container.card {
-  border-radius: 15px;
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  background-color: var(--text-color);
+  color: var(--accent-color);
 }

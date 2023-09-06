@@ -5,6 +5,7 @@ import { faInstagram, faTelegram } from '@fortawesome/free-brands-svg-icons';
 import { faPhone, faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import './App.css';
 
+
 const videoData = {
   'معرفی': ['Giu1-k-Qkck','EOA0Z2gvkh4'],
   'نقشهای معلم حرفه ای': ['azNg43gqZ8c','61_jX4Wast4','sjmbrJZbcyw'],
@@ -16,8 +17,8 @@ const videoData = {
 const HomePage = () => (
   <div>
     {/* New description */}
-    <h2 className="description">آکادمی آموزش معلمان و والدین دکتر پوران خروشی</h2>
-    <p>آنچه که شما معلمان و والدین باید برای تربیت شاگردان و فرزندانتون بدونین، اینجا یاد می گیرین</p>
+    <h2 className="section-title">آکادمی آموزش معلمان و والدین دکتر پوران خروشی</h2>
+    <p className="section-description">آنچه که شما معلمان و والدین باید برای تربیت شاگردان و فرزندانتون بدونین، اینجا یاد می گیرین</p>
 
     {/* Videos */}
     <EducationalVideosPage />
@@ -42,16 +43,29 @@ const AboutPage = () => (
   </div>
 );
 
+// Updated ContactPage component
 const ContactPage = () => (
-  <div>
-    <p><FontAwesomeIcon icon={faPhone} /> 913-318-1966</p>
-    <p><FontAwesomeIcon icon={faEnvelope} /> poorankhorooshi@gmail.com</p>
-    <a href="https://www.instagram.com/dr.pooran.khorooshi/" target="_blank" rel="noopener noreferrer">
-      <FontAwesomeIcon icon={faInstagram} /> Instagram
-    </a>
-    <a href="https://t.me/s/pkh2023" target="_blank" rel="noopener noreferrer">
-      <FontAwesomeIcon icon={faTelegram} /> Telegram
-    </a>
+  <div className="contact-section">
+    <div className="contact-item">
+      <FontAwesomeIcon icon={faPhone} />
+      <span>0913-318-1966</span>
+    </div>
+    <div className="contact-item">
+      <FontAwesomeIcon icon={faEnvelope} />
+      <span>poorankhorooshi@gmail.com</span>
+    </div>
+    <div className="contact-item social-media">
+      <a href="https://www.instagram.com/dr.pooran.khorooshi/" target="_blank" rel="noopener noreferrer">
+        <FontAwesomeIcon icon={faInstagram} />
+        <span>Instagram</span>
+      </a>
+    </div>
+    <div className="contact-item social-media">
+      <a href="https://t.me/s/pkh2023" target="_blank" rel="noopener noreferrer">
+        <FontAwesomeIcon icon={faTelegram} />
+        <span>Telegram</span>
+      </a>
+    </div>
   </div>
 );
 
@@ -97,25 +111,24 @@ const EducationalVideosPage = () => (
   </div>
 );
 
-const App = () => {
-  return (
-    <Router>
-      <div className="App">
-        <header className="App-header">
-          <h1>آکادمی آموزش معلمان و والدین</h1>
+const App = () => (
+  <Router>
+    <div className="App">
+      <header className="App-header">
+      <h1>آکادمی آموزش معلمان و والدین</h1>
           <h2>دکتر پوران خروشی</h2>
         </header>
-
         <nav className="App-nav">
-        <Link to="/">خانه </Link>
-        <Link to="/educational-videos">ویدئو‌های آموزشی </Link>
+       
+       
          
           
-          <Link to="/contact">تماس با ما</Link>
-          <Link to="/about">درباره ما</Link>
-        </nav>
-
-        <main className="App-main">
+       <Link to="/contact">تماس با ما</Link>
+       <Link to="/about">درباره ما</Link>
+       <Link to="/educational-videos">ویدئو‌های آموزشی </Link>
+       <Link to="/">خانه </Link>
+     </nav>
+<main className="App-main">
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/about" element={<AboutPage />} />
@@ -126,6 +139,8 @@ const App = () => {
       </div>
     </Router>
   );
-};
+
+
+
 
 export default App;
