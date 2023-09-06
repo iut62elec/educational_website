@@ -58,28 +58,43 @@ const ContactPage = () => (
 
 const EducationalVideosPage = () => (
   <div>
-    {Object.keys(videoData).map((category) => (
+    {Object.keys(videoData).map((category) => {
+      const playlistLink = category === 'آموزش والدین برای تربیت کودک و نوجوان'
+        ? 'https://www.youtube.com/playlist?list=PLBqeRzwcp__gnPbf_T_0eje1JMBJ2dlid'
+        : category === 'نقشهای معلم حرفه ای'
+        ? 'https://www.youtube.com/playlist?list=PLBqeRzwcp__g9cPzFe9Anf2EBQKMiMMW-'
+        : null;
 
-      <div key={category} className="video-section">
-        <h2>{category}</h2>
-        <div className="video-list">
-          {videoData[category].map((videoId) => (
-            <div key={videoId} className="video-container">
-              <iframe
-                title={videoId}
-                width="560"
-                height="315"
-                src={`https://www.youtube.com/embed/${videoId}`}
-                frameBorder="0"
-                allowFullScreen
-              ></iframe>
-            </div>
-          ))}
+      return (
+        <div key={category} className="video-section">
+          <h2>{category}</h2>
+          <div className="video-list">
+            {videoData[category].map((videoId) => (
+              <div key={videoId} className="video-container">
+                <iframe
+                  title={videoId}
+                  width="560"
+                  height="315"
+                  src={`https://www.youtube.com/embed/${videoId}`}
+                  frameBorder="0"
+                  allowFullScreen
+                ></iframe>
+              </div>
+            ))}
+          </div>
+          {playlistLink && (
+            <p>
+              <a href={playlistLink} target="_blank" rel="noopener noreferrer">
+              لیست کامل ویدئو‌ها در این قسمت
+              </a>
+            </p>
+          )}
         </div>
-      </div>
-    ))}
+      );
+    })}
   </div>
 );
+
 
 const App = () => {
   return (
