@@ -65,13 +65,13 @@ const EducationalVideosPage = () => (
         ? 'https://www.youtube.com/playlist?list=PLBqeRzwcp__g9cPzFe9Anf2EBQKMiMMW-'
         : null;
 
-      return (
-        <div key={category} className="video-section">
-          <h2>{category}</h2>
-          <div className="video-list">
-            {videoData[category].map((videoId) => (
-              <div key={videoId} className="video-container">
-                <iframe
+        return (
+          <div key={category} className="video-section card">
+            <h2 className="card-header">{category}</h2>
+            <div className="card-body video-list">
+              {videoData[category].map((videoId) => (
+                <div key={videoId} className="video-container card">
+                  <iframe
                   title={videoId}
                   width="560"
                   height="315"
@@ -83,8 +83,8 @@ const EducationalVideosPage = () => (
             ))}
           </div>
           {playlistLink && (
-            <p>
-              <a href={playlistLink} target="_blank" rel="noopener noreferrer">
+            <p className="card-footer">
+              <a href={playlistLink} className="playlist-button" target="_blank" rel="noopener noreferrer">
               لیست کامل ویدئو‌ها در این قسمت
               </a>
             </p>
@@ -94,7 +94,6 @@ const EducationalVideosPage = () => (
     })}
   </div>
 );
-
 
 const App = () => {
   return (

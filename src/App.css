@@ -144,3 +144,38 @@ a {
 .video-section a:hover {
   text-decoration: underline;
 }
+/* Additional styles */
+.card {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+}
+
+.card-header {
+  background-color: #f4f4f4;
+  border-bottom: 1px solid #ccc;
+  padding: 1rem;
+  font-weight: 600;
+}
+
+.card-body {
+  padding: 1rem;
+}
+
+.card-footer {
+  background-color: #f4f4f4;
+  border-top: 1px solid #ccc;
+  padding: 1rem;
+}
+
+.playlist-button {
+  background-color: #2b2f57;
+  color: rgb(191, 36, 36);
+  padding: 10px 20px;
+  border-radius: 4px;
+  text-decoration: none;
+}
+
+.playlist-button:hover {
+  background-color: #edf0e6;
+}
