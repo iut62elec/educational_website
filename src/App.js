@@ -29,7 +29,7 @@ const HomePage = () => (
 
 const AboutPage = () => (
   <div>
-    <p>About our academy and mission.</p>
+    <p>آنچه که شما معلمان و والدین باید برای تربیت شاگردان و فرزندانتون بدونین، اینجا یاد می گیرین</p>
     {/* Embed the "معرفی" video */}
     <iframe
       title="معرفی"
@@ -44,7 +44,6 @@ const AboutPage = () => (
 
 const ContactPage = () => (
   <div>
-    <p>Contact information will be here.</p>
     <p><FontAwesomeIcon icon={faPhone} /> 913-318-1966</p>
     <p><FontAwesomeIcon icon={faEnvelope} /> poorankhorooshi@gmail.com</p>
     <a href="https://www.instagram.com/dr.pooran.khorooshi/" target="_blank" rel="noopener noreferrer">
