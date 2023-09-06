@@ -9,10 +9,10 @@
 /* Font Import */
 @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&subset=arabic');
 
-.main-background {
+/* .main-background {
   background: white url('1.jpg') no-repeat center center;
   background-size: cover;
-}
+} */
 
 .video-background {
   background-color: white;
